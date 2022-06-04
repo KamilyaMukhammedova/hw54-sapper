@@ -1,12 +1,13 @@
 .Cell {
-    width: 30px;
+    width: 28px;
     height: 30px;
-    display: inline-block;
     margin: 2px;
     text-align: center;
+    display: inline-block;
+    border: 1px solid red;
 }
 
 .Item {
-    line-height: 30px;
+    line-height: 28px;
 }
 

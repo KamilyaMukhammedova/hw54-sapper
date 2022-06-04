@@ -1,9 +1,10 @@
 import React from 'react';
+import './Cell.css';
 
 const Cell = (props) => {
   return (
     <div className="Cell">
-      <span className="Item">{props.hasItem ? 'o' : ''}</span>
+      <span className="Item">{props.hasItem === true ? 'o' : ''}</span>
     </div>
   );
 };
