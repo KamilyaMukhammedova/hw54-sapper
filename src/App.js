@@ -15,7 +15,22 @@ const App = () => {
 
   const [cells, setCells] = useState(cellsArray);
 
-  const playingFieldComponent = <PlayingField cells={cells}/>;
+  const onClick = cellId => {
+    const cellsCopy = cells.map(cell => {
+      if (cell.id === cellId) {
+        return {
+          ...cell,
+          isClicked: true,
+        };
+      }
+
+      return cell;
+    });
+
+    setCells(cellsCopy);
+  };
+
+  const playingFieldComponent = <PlayingField cells={cells} onCellClick={onClick}/>;
 
 
   return (

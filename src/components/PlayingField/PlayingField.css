@@ -1,0 +1,16 @@
+.Cell {
+    width: 28px;
+    height: 30px;
+    margin: 2px;
+    text-align: center;
+    display: inline-block;
+}
+
+.Grey {
+    background-color: darkgrey;
+    color: transparent;
+}
+
+.White {
+    background-color: white;
+}
