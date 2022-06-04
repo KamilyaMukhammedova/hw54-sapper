@@ -1,0 +1,12 @@
+.Cell {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin: 2px;
+    text-align: center;
+}
+
+.Item {
+    line-height: 30px;
+}
+
