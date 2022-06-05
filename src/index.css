@@ -27,3 +27,8 @@ code {
   display: flex;
   flex-wrap: wrap;
 }
+
+.CenterDiv {
+  text-align: center;
+  width: 227px;
+}
