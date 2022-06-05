@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {nanoid} from "nanoid";
 import PlayingField from "./components/PlayingField/PlayingField";
+import Try from "./components/Try/Try";
 
 const App = () => {
   const cellsArray = [];
@@ -14,10 +15,13 @@ const App = () => {
   cellsArray[Math.floor(Math.random() * cellsArray.length)].hasItem = true;
 
   const [cells, setCells] = useState(cellsArray);
+  const [tries, setTries] = useState(0);
 
   const onClick = cellId => {
+
     const cellsCopy = cells.map(cell => {
       if (cell.id === cellId) {
+        setTries( tries + 1);
         return {
           ...cell,
           isClicked: true,
@@ -31,13 +35,14 @@ const App = () => {
   };
 
   const playingFieldComponent = <PlayingField cells={cells} onCellClick={onClick}/>;
-
+  const triesComponent = <Try tries={tries}/>
 
   return (
     <div className="Container">
       <div className="Field">
         {playingFieldComponent}
       </div>
+      {triesComponent}
     </div>
   );
 }
