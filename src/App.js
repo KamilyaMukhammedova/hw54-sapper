@@ -1,24 +1,11 @@
 import {useState} from "react";
-import {nanoid} from "nanoid";
+import {generateCells} from "./GenerateCells";
 import PlayingField from "./components/PlayingField/PlayingField";
 import Try from "./components/Try/Try";
 import ResetBtn from "./components/ResetBtn/ResetBtn";
 import Message from "./components/Message/Message";
 
 const App = () => {
-  const generateCells = () => {
-    const cellsArray = [];
-    for (let i = 0; i < 36; i++) {
-      cellsArray.push({
-        id: nanoid(),
-        hasItem: false,
-        isClicked: false,
-      });
-    }
-    cellsArray[Math.floor(Math.random() * cellsArray.length)].hasItem = true;
-    return cellsArray;
-  };
-
   const [cells, setCells] = useState(generateCells);
   const [tries, setTries] = useState(0);
   const [itemIsFound, setItemIsFound] = useState(false);
